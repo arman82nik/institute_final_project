@@ -5,5 +5,5 @@ create_database()
 print("Database created")
 
 
-import test.classroom_test
+import test.course_test
 
