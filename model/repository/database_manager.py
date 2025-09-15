@@ -24,7 +24,7 @@ def create_database():
 
     cursor.execute(
         """
-        CREATE TABLE IF NOT EXISTS course (
+        CREATE TABLE IF NOT EXISTS classroom (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
             teacher TEXT NOT NULL,
@@ -33,18 +33,6 @@ def create_database():
             start_time TEXT NOT NULL,
             end_time TEXT NOT NULL
         );
-        """
-    )
-
-    cursor.execute(
-        """
-        CREATE TABLE IF NOT EXISTS project (
-            student_id INTEGER NOT NULL,
-            project_name TEXT NOT NULL,
-            file_url TEXT NOT NULL,
-            date_time TEXT NOT NULL,
-            score INTEGER NOT NULL
-        );    
         """
     )
 
