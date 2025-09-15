@@ -1,4 +1,4 @@
-from model.repository.repository import *
+from model.repository import *
 from model.entity.course import Course
 
 
