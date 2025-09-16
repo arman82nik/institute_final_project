@@ -81,6 +81,19 @@ def create_database():
         """
     )
 
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS lessons (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        person_id INTEGER NOT NULL,
+        title TEXT NOT NULL,
+        code INTEGER NOT NULL,
+        teacher TEXT NOT NULL,
+        units INTEGER NOT NULL
+        
+        
+        """
+    )
 
     cursor.close()
     connection.close()
