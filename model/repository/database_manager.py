@@ -55,6 +55,19 @@ def create_database():
 
     )
 
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS project (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        student_id INTEGER NOT NULL,
+        project_name TEXT NOT NULL,
+        file_url TEXT NOT NULL,
+        date_time TEXT NOT NULL,
+        score INTEGER NOT NULL,
+        );
+        """
+    )
+
 
     cursor.close()
     connection.close()

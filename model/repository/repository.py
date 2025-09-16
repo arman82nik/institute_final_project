@@ -60,3 +60,5 @@ class Repository:
         return session.query(self.class_name).filter(filter).all()
 
 
+
+
