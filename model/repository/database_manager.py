@@ -95,5 +95,18 @@ def create_database():
         """
     )
 
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS attendance (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        course_id INTEGER NOT NULL,
+        student_id INTEGER NOT NULL,
+        session_number INTEGER NOT NULL,
+        present INTEGER NOT NULL,
+        class_type TEXT NOT NULL
+        );
+        """
+    )
+
     cursor.close()
     connection.close()
