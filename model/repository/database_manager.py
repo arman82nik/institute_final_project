@@ -68,6 +68,19 @@ def create_database():
         """
     )
 
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS register (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        person_id INTEGER NOT NULL,
+        name TEXT NOT NULL,
+        family TEXT NOT NULL,
+        curse_number INTEGER NOT NULL,
+        phone_number INTEGER NOT NULL
+        
+        """
+    )
+
 
     cursor.close()
     connection.close()
