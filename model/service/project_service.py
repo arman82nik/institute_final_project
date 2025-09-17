@@ -12,7 +12,7 @@ class ProjectService:
 
 
     def edit(self,project):
-        return self.repository.save(project)
+        return self.repository.edit(project)
 
     def delete(self,id):
         return self.repository.delete(id)

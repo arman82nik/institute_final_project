@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from model.entity.base import Base
 from model.entity.student import Student
-
+from model.entity.course import Course
 
 
 class Project(Base):
@@ -11,6 +11,7 @@ class Project(Base):
 
     id = Column(Integer, primary_key=True)
     student_id = Column(Integer,ForeignKey("student.id"),nullable=False)
+    course_name=Column(String,ForeignKey("course.name"),nullable=False)
     project_name=Column(String(30),nullable=False)
     file_url=Column(String(255),nullable=False)
     date_time=Column(String,nullable=False)
@@ -18,6 +19,7 @@ class Project(Base):
 
 
     student = relationship("Student")
+    course = relationship("Course")
 
 
     def __init__(self,student_id,project_name,file_url,date_time,score,id=None)-> None:

@@ -1,10 +1,12 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model.entity.base import Base
+from sqlalchemy.orm import relationship
 
 class Course(Base):
     __tablename__ = 'course'
 
     id = Column(Integer, primary_key=True)
+    student_name=Column(String(30),ForeignKey('student.name'),nullable=False)
     name = Column(String(30),nullable=False)
     teacher = Column(String(30),nullable=False)
     start_date = Column(String,nullable=False)
@@ -12,6 +14,9 @@ class Course(Base):
     start_time = Column(String,nullable=False)
     end_time = Column(String,nullable=False)
     type_class=Column(String(10),nullable=False)
+
+    projects = relationship("Project", back_populates="course")
+    students = relationship("Student")
 
 
     def __init__(self, name: object, teacher: object, start_date: object, end_date: object, start_time: object, end_time: object, type_class: object, id=None) -> None:
