@@ -15,15 +15,15 @@ class CourseController:
         return self.service.save(course)
 
     @exception_handling
-    def edit(self, id, name, teacher, start_date, end_date, start_time, end_time, type_class):
-        course= Course(id, name,teacher, start_date, end_date, start_time, end_time, type_class)
-        course.id = id
+    def edit(self, course_id, name, teacher, start_date, end_date, start_time, end_time, type_class):
+        course= Course(course_id, name,teacher, start_date, end_date, start_time, end_time, type_class)
+        course.course_id = course_id
         return self.service.edit(course)
 
 
-    def delete(self, id):
+    def delete(self, course_id):
         try:
-            return True,self.service.delete(id)
+            return True,self.service.delete(course_id)
         except Exception as e:
             return False, f"error: {e}"
 
@@ -33,9 +33,9 @@ class CourseController:
         except Exception as e:
             return False, f"error: {e}"
 
-    def find_by_id(self, id):
+    def find_by_id(self, course_id):
         try:
-            return True,self.service.find_by_id(id)
+            return True,self.service.find_by_id(course_id)
         except Exception as e:
             return False, f"error: {e}"
 

@@ -9,18 +9,18 @@ class ProjectController:
 
     @exception_handling
     def save(self, student_id, project_name, file_url, date_time, score):
-        project = Project(student_id, project_name, file_url, date_time, score)
+        project = Project(student_id, project_name, file_url, date_time,score)
         return self.service.save(project)
 
     @exception_handling
-    def edit(self, id, student_id, project_name, file_url, date_time, score):
-        project = Project(id,student_id, project_name, file_url, date_time, score)
-        project.id = id
+    def edit(self, project_id, student_id, project_name, file_url, date_time, score):
+        project = Project(project_id,student_id, project_name, file_url, date_time, score)
+        project.project_id = project_id
         return self.service.edit(project)
 
-    def delete(self, id):
+    def delete(self, project_id):
         try:
-            return True, self.service.delete(id)
+            return True, self.service.delete(project_id)
         except Exception as e:
             return False, f"error: {e}"
 
@@ -30,9 +30,9 @@ class ProjectController:
         except Exception as e:
             return False, f"error: {e}"
 
-    def find_by_id(self, id):
+    def find_by_id(self, project_id):
         try:
-            return True, self.service.find_by_id(id)
+            return True, self.service.find_by_id(project_id)
         except Exception as e:
             return False, f"error: {e}"
 
