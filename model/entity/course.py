@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 class Course(Base):
     __tablename__ = 'course'
 
-    id = Column(Integer, primary_key=True)
+    course_id = Column(Integer, primary_key=True)
     student_name=Column(String(30),ForeignKey('student.name'),nullable=False)
     name = Column(String(30),nullable=False)
     teacher = Column(String(30),nullable=False)
@@ -16,11 +16,12 @@ class Course(Base):
     type_class=Column(String(10),nullable=False)
 
     projects = relationship("Project", back_populates="course")
-    students = relationship("Student")
+    students = relationship("Student" , back_populates="course")
 
 
-    def __init__(self, name: object, teacher: object, start_date: object, end_date: object, start_time: object, end_time: object, type_class: object, id=None) -> None:
-        self.id = id
+    def __init__(self, name: object, teacher: object, start_date: object, end_date: object, start_time: object, end_time: object, type_class: object, course_id=None,**kwargs) -> None:
+        super().__init__(**kwargs)
+        self.course_id = course_id
         self.name = name
         self.teacher = teacher
         self.start_date = start_date
@@ -30,7 +31,7 @@ class Course(Base):
         self.type_class = type_class
         
     def __repr__(self):
-        return f"<Course(id={self.id},name={self.name}, teacher={self.teacher}, type_class={self.type_class})>"
+        return f"<Course(course_id={self.course_id},name={self.name}, teacher={self.teacher}, type_class={self.type_class})>"
 
 
 

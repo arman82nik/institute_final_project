@@ -14,14 +14,14 @@ class ProjectService:
     def edit(self,project):
         return self.repository.edit(project)
 
-    def delete(self,id):
-        return self.repository.delete(id)
+    def delete(self,project_id):
+        return self.repository.delete(project_id)
 
     def find_all(self):
         return self.repository.find_all()
 
-    def find_by_id(self,id):
-        return self.repository.find_by_id(id)
+    def find_by_id(self,project_id):
+        return self.repository.find_by_id(project_id)
 
 
 

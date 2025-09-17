@@ -12,11 +12,11 @@ class CourseService:
     def edit(self, course):
         return self.repository.edit(course)
 
-    def delete(self, id):
-        return self.repository.delete(id)
+    def delete(self, course_id):
+        return self.repository.delete(course_id)
 
-    def find_by_id(self, id):
-        return self.repository.find_by_id(id)
+    def find_by_id(self, course_id):
+        return self.repository.find_by_id(course_id)
 
     def find_all(self):
         return self.repository.find_all()
