@@ -63,7 +63,7 @@ def create_database():
         project_name TEXT NOT NULL,
         file_url TEXT NOT NULL,
         date_time TEXT NOT NULL,
-        score INTEGER NOT NULL,
+        score INTEGER NOT NULL
         );
         """
     )
