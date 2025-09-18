@@ -78,6 +78,8 @@ def create_database():
         curse_number INTEGER NOT NULL,
         phone_number INTEGER NOT NULL
         
+        )
+        
         """
     )
 
@@ -90,7 +92,7 @@ def create_database():
         code INTEGER NOT NULL,
         teacher TEXT NOT NULL,
         units INTEGER NOT NULL
-        
+        )
         
         """
     )
