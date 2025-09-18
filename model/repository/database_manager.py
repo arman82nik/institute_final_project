@@ -110,5 +110,27 @@ def create_database():
         """
     )
 
+
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS attendance (
+         id  INTEGER PRIMARY KEY AUTOINCREMENT,
+        person_id REFERENCES PERSONS,
+        title        TEXT    NOT NULL,
+        amount       INTEGER NOT NULL,
+        pay_date     TEXT    NOT NULL,
+        payment_type TEXT    NOT NULL,
+        description  TEXT
+        
+        )
+        
+        
+        
+        """
+    )
+
+
+
+
     cursor.close()
     connection.close()
