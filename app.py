@@ -8,5 +8,7 @@
 # import test.course_test
 
 
-import test.project_test
+#import test.project_test
+
+import test.attendance_test
 
