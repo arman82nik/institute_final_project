@@ -4,7 +4,7 @@ from model.tools.decorators import exception_handling
 
 
 class AttendanceController:
-    def __int__(self):
+    def __init__(self):
         self.service = AttendanceService()
 
     @exception_handling
