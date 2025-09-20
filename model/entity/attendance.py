@@ -9,7 +9,7 @@ class Attendance(Base):
     __tablename__ = 'attendance'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    course_id = Column(Integer, ForeignKey("course.id"), nullable=False)
+    course_id = Column(Integer, ForeignKey("course.course.id"), nullable=False)
     student_id = Column(Integer, ForeignKey("student.id"), nullable=False)
     session_number = Column(Integer, nullable=False)
     present = Column(Integer, nullable=False)
