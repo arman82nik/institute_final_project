@@ -1,20 +1,20 @@
 from controller.exercise_controller import ExerciseController
-from test.student_test import test
+
 
 exercise_controller = ExerciseController()
 
-# save test []
+# save test [passed]
 # print(exercise_controller.save(1, 1, 1, 18))
 #
-# edit test []
+# edit test [passed]
 # print(exercise_controller.edit(1, 1, 1, 2,20))
 #
-# delete test []
+# delete test [passed]
 # print(exercise_controller.delete(1))
 #
-# find all test []
+# find all test [passed]
 # print(exercise_controller.find_all())
 #
-# find by id test []
+# find by id test [passed]
 # print(exercise_controller.find_by_id(1))
 

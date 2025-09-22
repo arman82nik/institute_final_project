@@ -21,7 +21,7 @@ class ExerciseController:
     def delete(self, id):
         return self.service.delete(id)
 
-    def find_all(self, id):
+    def find_all(self):
         try:
             return True, self.service.find_all()
         except Exception as e:
