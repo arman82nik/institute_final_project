@@ -160,6 +160,27 @@ def create_database():
     )
 
 
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS employee (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        first_name TEXT NOT NULL,
+        last_name TEXT NOT NULL,
+        national_id TEXT NOT NULL,
+        birthday TEXT NOT NULL,
+        phone TEXT NOT NULL,
+        email TEXT NOT NULL,
+        job_title TEXT NOT NULL,
+        department TEXT NOT NULL,
+        hire_date TEXT NOT NULL,
+        salary TEXT NOT NULL
+        
+        
+        )
+        """
+    )
+
+
 
     cursor.close()
     connection.close()
