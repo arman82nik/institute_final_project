@@ -6,7 +6,7 @@ class Course(Base):
     __tablename__ = 'course'
 
     course_id = Column(Integer, primary_key=True)
-    student_name=Column(String(30),ForeignKey('student.name'),nullable=False)
+    student_id=Column(Integer,ForeignKey('student.id'),nullable=False)
     name = Column(String(30),nullable=False)
     teacher = Column(String(30),nullable=False)
     start_date = Column(String,nullable=False)
@@ -16,7 +16,7 @@ class Course(Base):
     type_class=Column(String(10),nullable=False)
 
     projects = relationship("Project", back_populates="course")
-    students = relationship("Student" , back_populates="course")
+    student = relationship("Student" , back_populates="courses")
 
 
     def __init__(self, name: object, teacher: object, start_date: object, end_date: object, start_time: object, end_time: object, type_class: object, course_id=None,**kwargs) -> None:
