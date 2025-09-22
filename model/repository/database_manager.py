@@ -110,6 +110,17 @@ def create_database():
         """
     )
 
+    cursor.execute(
+        """
+        CREATE TABLE IF NOT EXISTS exercise (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        course_id INTEGER NOT NULL,
+        student_id INTEGER NOT NULL,
+        session_number INTEGER NOT NULL,
+        score INTEGER
+        );
+        """
+    )
 
     cursor.execute(
         """
@@ -123,9 +134,7 @@ def create_database():
         description  TEXT
         
         )
-        
-        
-        
+               
         """
     )
 
