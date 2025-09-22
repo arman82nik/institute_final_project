@@ -138,6 +138,26 @@ def create_database():
         """
     )
 
+    cursor.execute(
+        """
+    
+    
+        CREATE TABLE IF NOT EXISTS teacher(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        first_name TEXT NOT NULL,
+        last_name TEXT NOT NULL,
+        national_id TEXT UNIQUE,
+        phone TEXT NOT NULL,
+        email TEXT NOT NULL,
+        department TEXT NOT NULL,
+        hire_date TEXT NOT NULL
+       
+        
+                       
+        )
+        """
+
+    )
 
 
 
