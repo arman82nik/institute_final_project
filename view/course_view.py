@@ -34,6 +34,9 @@ class CourseView:
 
 
     def select_course(self):
+        focus_item = self.table.focus()
+        if not focus_item:
+            return
         selected_course= self.table.item(self.table.focus())["values"]
         if selected_course:
             course =Course(*selected_course[1:])
@@ -54,9 +57,12 @@ class CourseView:
             self.show_data_on_table(course_list)
 
     def save_click(self):
-        status, message = self.course_controller.save(self.course_id.get(),self.name.get(),
-                                                      self.teacher.get(),self.start_date.get(),self.end_date.get(),
-                                                      self.start_time.get(),self.end_time.get())
+        status, message = self.course_controller.save(
+            self.course_id.get(), self.name.get(), self.teacher.get(),
+            self.start_date.get(), self.end_date.get(),
+            self.start_time.get(), self.end_time.get(),
+            self.type_class.get()
+        )
         if status:
             msg.showinfo("Success", f"{message}Course Saved Successfully")
             self.reset_form()
