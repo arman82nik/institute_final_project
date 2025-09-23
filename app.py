@@ -22,15 +22,17 @@
 # ui=CourseView
 
 
-from model.tools.logging import Logger
-from model.entity import *
+# from model.tools.logging import Logger
+# from model.entity import *
+#
+# Logger.info("App Started")
+#
+#
+#
+# from view.course_view import CourseView
+# ui = CourseView()
 
-Logger.info("App Started")
 
-
-
-from view.course_view import CourseView
-ui = CourseView()
-
-
+# exercise passed
+# import test.exercise_test
 
