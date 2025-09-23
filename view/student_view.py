@@ -141,8 +141,8 @@ class StudentView:
 
         Button(self.win, text="New Student", command=self.reset_form).place(x=220,y=390)
         Button(self.win, text="Save", command=self.save_click).place(x=300, y=390)
-        Button(self.win, text="edit", command=self.edit_click).place(x=340, y=390)
-        Button(self.win, text="delete", command=self.delete_click).place(x=380, y=390)
+        Button(self.win, text="Edit", command=self.edit_click).place(x=340, y=390)
+        Button(self.win, text="Delete", command=self.delete_click).place(x=380, y=390)
 
         self.reset_form()
         self.win.mainloop()

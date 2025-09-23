@@ -2,7 +2,7 @@ from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
 
 class Student(Base):
-    __tablename__ = "student"
+    __tablename__ = "students"
 
     id = Column(Integer, primary_key=True)
     student_id = Column(Integer,nullable=False)
