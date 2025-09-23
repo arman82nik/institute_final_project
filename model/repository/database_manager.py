@@ -41,7 +41,7 @@ def create_database():
         """
         CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        person_id INTEGER NOT NULL,
+        student_id INTEGER NOT NULL,
         name TEXT NOT NULL,
         email TEXT NOT NULL,
         family TEXT NOT NULL,
