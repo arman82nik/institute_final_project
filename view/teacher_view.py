@@ -12,12 +12,12 @@ from view.component.label_with_text import LabelWithText
 class TeacherView:
     def reset_form(self):
         self.teacher_id.set(0)
-        self.first_name = ""
-        self.last_name = ""
-        self.email = ""
-        self.department = ""
-        self.national_id = ""
-        self.phone_number = ""
+        self.first_name.set("")
+        self.last_name.set("")
+        self.email.set("")
+        self.department.set("")
+        self.national_id.set(0)
+        self.phone_number.set(0)
 
 
         status, teacher_list = self.teacher_controller.find_all()
@@ -66,7 +66,7 @@ class TeacherView:
             msg.showerror("Error", f"{message}Teacher Saved Error")
 
     def edit_click(self):
-        status, message = self.teacher_controller.edit(self.teacher_id.get(), self.first_name.get(),
+        status , message = self.teacher_controller.edit(self.teacher_id.get(), self.first_name.get(),
                                                       self.last_name.get(), self.email.get(), self.department.get(),
                                                       self.national_id.get(), self.phone_number.get())
         if status:
