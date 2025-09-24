@@ -1,6 +1,7 @@
 from model.repository.repository import *
 from model.entity.teacher import Teacher
 
+
 class TeacherService:
     def __init__(self):
         self.repository = Repository(Teacher)

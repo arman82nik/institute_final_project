@@ -2,6 +2,7 @@ from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
 
 
+
 class Teacher(Base):
     __tablename__ = "teacher"
 

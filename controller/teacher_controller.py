@@ -3,6 +3,7 @@ from model.service.teacher_service import TeacherService
 from model.tools.decorators import exception_handling
 
 
+
 class TeacherController:
     def __init__(self):
         self.service = TeacherService()
