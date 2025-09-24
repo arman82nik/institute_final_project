@@ -2,8 +2,10 @@ from model.repository.repository import *
 from model.entity.lesson import Lesson
 
 class LessonService():
+
     def __init__(self):
         self.repository = Repository(Lesson)
+
 
     def save(self,lesson):
         return self.repository.save(lesson)
