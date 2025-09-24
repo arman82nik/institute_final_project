@@ -7,6 +7,7 @@ from controller.student_controller import StudentController
 from model.entity.student import Student
 from view.component.label_with_text import LabelWithText
 
+
 class StudentView:
     def reset_form(self):
         self.student_id.set(0)
@@ -21,6 +22,7 @@ class StudentView:
         if status:
             self.show_data_on_table(student_list)
 
+
     def show_data_on_table(self, student_list):
         for item in self.table.student.get():
             self.table.delete(item)
@@ -29,6 +31,7 @@ class StudentView:
         if student_list:
             for student in student_list:
                 self.table.insert("", 'end', values = student.to_tuple())
+
 
 
     def select_student(self):
@@ -43,6 +46,7 @@ class StudentView:
             self.age.set(student.age)
             self.gender.set(student.gender)
             self.birthay.set(student.birthday)
+
 
 
     def search(self):
@@ -62,6 +66,7 @@ class StudentView:
         else:
             msg.showerror("Error", f"{message}Student Saved Error")
 
+
     def edit_click(self):
         status, message = self.student_controller.edit(self.student_id.get(),self.name.get(),self.age.get(),
                                                       self.gender.get(),self.birthay.get(),self.email.get())
@@ -80,6 +85,7 @@ class StudentView:
 
         else:
             msg.showerror("Error", f"{message}Student delete Error")
+
 
 
     def __init__(self):

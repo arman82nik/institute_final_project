@@ -69,7 +69,7 @@ def create_database():
     )
 
     cursor.execute(
-        """
+         """
         CREATE TABLE IF NOT EXISTS register (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         person_id INTEGER NOT NULL,
@@ -80,11 +80,11 @@ def create_database():
         
         )
         
-        """
+         """
     )
 
     cursor.execute(
-        """
+         """
         CREATE TABLE IF NOT EXISTS lessons (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         person_id INTEGER NOT NULL,
@@ -94,7 +94,7 @@ def create_database():
         units INTEGER NOT NULL
         )
         
-        """
+         """
     )
 
     cursor.execute(
@@ -139,7 +139,7 @@ def create_database():
     )
 
     cursor.execute(
-        """
+         """
     
     
         CREATE TABLE IF NOT EXISTS teacher(
@@ -155,7 +155,7 @@ def create_database():
         
                        
         )
-        """
+         """
 
     )
 
