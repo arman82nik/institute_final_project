@@ -9,14 +9,14 @@ class TeacherController:
         self.service = TeacherService()
     @exception_handling
 
-    def save(self,first_name, last_name, email, department, national_id, phone_number):
-        teacher=Teacher(first_name, last_name, email, department, national_id, phone_number)
+    def save(self,teacher_id,first_name, last_name, email, department, national_id, phone_number):
+        teacher=Teacher(teacher_id,first_name, last_name, email, department, national_id, phone_number)
         self.service.save(teacher)
     @exception_handling
 
 
-    def edit(self,first_name, last_name, email, department, national_id, phone_number):
-        teacher=Teacher(first_name, last_name, email, department, national_id, phone_number)
+    def edit(self,teacher_id,first_name, last_name, email, department, national_id, phone_number):
+        teacher=Teacher(teacher_id,first_name, last_name, email, department, national_id, phone_number)
         teacher.id=id
         self.service.edit(teacher)
 
