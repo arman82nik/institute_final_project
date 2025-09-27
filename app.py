@@ -29,8 +29,8 @@
 #
 #
 #
-# from view.course_view import CourseView
-# ui = CourseView()
+from view.project_view import ProjectView
+ui = ProjectView()
 
 
 # exercise passed
