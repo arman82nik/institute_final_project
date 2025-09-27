@@ -5,8 +5,8 @@ from model.tools.decorators import exception_handling
 
 
 class LessonController():
-    def __init__(self,lesson_service):
-        self.service=LessonService
+    def __init__(self):
+        self.service=LessonService()
 
 
     @exception_handling

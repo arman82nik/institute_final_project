@@ -11,7 +11,7 @@ class Lesson(Base):
     title = Column(String, nullable=False)
     code = Column(String, nullable=False)
     teacher = Column(String, nullable=False)
-    units = Column(String, nullable=False)
+    units = Column(Integer, nullable=False)
 
 
     def __init__(self, person_id, title, code, teacher, units):
