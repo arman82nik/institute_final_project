@@ -1,6 +1,7 @@
 from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
 
+
 class Register(Base):
     __tablename__ = "register"
 
@@ -20,6 +21,10 @@ class Register(Base):
 
     def __repr__(self):
         return f"{self.__dict__}"
+    #sina
+
+
+
 
 
 

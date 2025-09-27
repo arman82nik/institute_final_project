@@ -8,13 +8,13 @@ class StudentController:
         self.service = StudentService()
     @exception_handling
 
-    def save(self,person_id,name,family,email,gender,birthday):
-        student=Student(person_id,name,family,email,gender,birthday)
+    def save(self,student_id,name,family,email,gender,birthday):
+        student=Student(student_id,name,family,email,gender,birthday)
         self.service.save(student)
 
     @exception_handling
-    def edit(self,id,person_id,name,family,email,gender,birthday):
-        student=Student(person_id,name,family,email,gender,birthday)
+    def edit(self,id,student_id,name,family,email,gender,birthday):
+        student=Student(student_id,name,family,email,gender,birthday)
         student.id=id
         self.service.edit(student)
 
