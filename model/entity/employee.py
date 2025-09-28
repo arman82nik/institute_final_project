@@ -1,5 +1,6 @@
 from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
+from sqlalchemy.orm import relationship
 
 class Employee(Base):
     __tablename__ = "employee"
@@ -14,7 +15,13 @@ class Employee(Base):
     hire_date = Column(String,nullable=False)
     salary = Column(String,nullable=False)
 
-    def __init__(self, first_name,last_name,national_id,birthday,email,job_title,department,hire_date,salary):
+    registers=relationship("Register", back_populates="employee")
+    payments = relationship("Payment", back_populates="employee")
+
+
+    def __init__(self, first_name:object,last_name:object,national_id:None,birthday:object,email:object,job_title:object,department:object,hire_date:object,salary:object,**kwargs):
+        super().__init__(**kwargs)
+
         self.first_name = first_name
         self.last_name = last_name
         self.national_id = national_id
@@ -25,7 +32,6 @@ class Employee(Base):
         self.hire_date = hire_date
         self.salary = salary
 
-
     def __repr__(self):
-        return f"{self.__dict__}"
+        return f"<employee(national_id={self.national_id},first_name={self.first_name}, last_name={self.last_name}, department={self.department})>"
 

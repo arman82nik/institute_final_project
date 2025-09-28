@@ -1,5 +1,6 @@
 from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
+from sqlalchemy.orm import relationship
 
 class Student(Base):
     __tablename__ = "students"
@@ -12,7 +13,8 @@ class Student(Base):
     birthday = Column(String,nullable=False)
     email = Column(String,nullable=False)
 
-    def __init__(self, student_id, name, age, gender, birthday, email):
+    def __init__(self, student_id:None, name:object, age:object, gender:object, birthday:object, email:object,**kwargs):
+        super().__init__(**kwargs)
         self.student_id = student_id
         self.name = name
         self.age = age
@@ -21,5 +23,6 @@ class Student(Base):
         self.email = email
 
 
+
     def __repr__(self):
-        return f"{self.__dict__}"
+        return f"<Student(student_id={self.student_id},name={self.name}, age={self.age}, gender={self.gender})>"
