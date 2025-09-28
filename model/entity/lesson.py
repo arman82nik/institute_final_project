@@ -1,5 +1,6 @@
 from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
+from sqlalchemy.orm import relationship
 
 
 
@@ -14,15 +15,19 @@ class Lesson(Base):
     units = Column(Integer, nullable=False)
 
 
-    def __init__(self, person_id, title, code, teacher, units):
+    registers=relationship("Register", back_populates="lessons")
+    teachers=relationship("Teacher", back_populates="lessons")
+
+    def __init__(self, person_id:None, title:object, code:object, teacher:object, units:object,**kwargs):
+
+        super().__init__(**kwargs)
+
         self.person_id = person_id
         self.title = title
         self.code = code
         self.teacher = teacher
         self.units = units
 
-
-
     def __repr__(self):
-        return f"{self.__dict__}"
+        return f"<Lesson(person_id={self.person_id},title{self.title},code={self.code}, teacher={self.teacher})>"
 
