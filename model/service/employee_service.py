@@ -1,19 +1,19 @@
-from model.entity.teacher import Teacher
+
 from model.repository.repository import *
 from model.entity.employee import Employee
 
 class EmployeeService:
     def __init__(self):
-        self.repository = Repository(Teacher)
+        self.repository = Repository(Employee)
 
-    def save(self,Teacher):
-        return self.repository.save(Teacher)
+    def save(self,employee):
+        return self.repository.save(employee)
 
     def delete(self,national_id):
         return self.repository.delete(national_id)
 
-    def edit(self,Teacher):
-        return self.repository.edit(Teacher)
+    def edit(self,Employee):
+        return self.repository.edit(Employee)
 
     def find_all(self):
         return self.repository.find_all()
