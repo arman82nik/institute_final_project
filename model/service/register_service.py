@@ -5,7 +5,7 @@ from model.entity.register import Register
 
 class RegisterService:
     def __init__(self):
-        self.repository = RegisterService(Register)
+        self.repository = Repository(Register)
 
 
     def save(self,register):
