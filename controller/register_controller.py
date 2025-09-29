@@ -5,7 +5,7 @@ from model.tools.decorators import exception_handling
 
 
 class RegisterController:
-    def __init__(self, register_service):
+    def __init__(self):
         self.service = RegisterService()
 
 
