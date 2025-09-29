@@ -1,5 +1,6 @@
 from sqlalchemy import  Integer, String, Column
 from model.entity.base import Base
+from sqlalchemy.orm import relationship
 
 
 class Payment(Base):
@@ -13,8 +14,12 @@ class Payment(Base):
     pay_date=Column(String,nullable=False)
     description=Column(String,nullable=False)
 
+    students=relationship("Student", back_populates="payment")
+    employees=relationship("Employee", back_populates="payment")
 
-    def __init__(self,person_id,amount,title,payment_type,payment_date,diecription):
+    def __init__(self,person_id:None,amount:object,title:object,payment_type:object,payment_date:object,diecription:object,**kwargs):
+        super().__init__(**kwargs)
+
         self.person_id = person_id
         self.amount = amount
         self.title = title
@@ -23,4 +28,4 @@ class Payment(Base):
         self.diecription = diecription
 
     def __repr__(self):
-        return f"{self.__dict__}"
+        return f"<Payment(person_id={self.person_id},amount={self.amount}, payment_type={self.payment_type}, title={self.title})>"
