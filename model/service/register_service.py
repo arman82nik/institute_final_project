@@ -17,6 +17,6 @@ class RegisterService:
     def find_by_id(self,student_id):
         return self.repository.find_by_id(student_id)
 
-    def find_by(self,student_id):
-        return self.repository.find_by()
+    def find_by(self,register):
+        return self.repository.find_by(register)
 
