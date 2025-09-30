@@ -24,7 +24,7 @@ class StudentView:
 
 
     def show_data_on_table(self, student_list):
-        for item in self.table.student.get():
+        for item in self.table.get_children():
             self.table.delete(item)
 
 
