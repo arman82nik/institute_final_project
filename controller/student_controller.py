@@ -18,9 +18,9 @@ class StudentController:
         student.id=id
         self.service.edit(student)
 
-    def delete(self,id):
+    def delete(self,student_id):
         try:
-            return True, self.service.delete(id)
+            return True, self.service.delete(student_id)
         except Exception as e:
             return False, f"error: {e}"
 
@@ -30,9 +30,9 @@ class StudentController:
         except Exception as e:
             return False, f"error: {e}"
 
-    def find_by_id(self,id):
+    def find_by_id(self,student_id):
         try:
-            return True, self.service.find_by_id(id)
+            return True, self.service.find_by_id(student_id)
         except Exception as e:
             return False, f"error: {e}"
 
