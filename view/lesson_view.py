@@ -91,7 +91,7 @@ class LessonView:
         self.win.geometry("900x450")
 
         self.person_id = IntVar()
-        LabelWithText(self.win, "Person ID:", self.person_id ,20,20,state="readonly")
+        LabelWithText(self.win, "Person ID:", self.person_id ,20,20)
 
 
         self.title = StringVar()
@@ -103,7 +103,7 @@ class LessonView:
         self.teacher = StringVar()
         LabelWithText(self.win, "teacher:", self.teacher ,20,140)
 
-        units = IntVar()
+        self.units = IntVar()
         LabelWithText(self.win, "units:", self.units ,20,200)
 
 

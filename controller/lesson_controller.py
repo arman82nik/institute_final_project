@@ -4,7 +4,7 @@ from model.tools.decorators import exception_handling
 
 
 
-class LessonController():
+class LessonController:
     def __init__(self):
         self.service=LessonService()
 
@@ -24,9 +24,9 @@ class LessonController():
         return self.service.edit(lesson)
 
 
-    def delete(self,id):
+    def delete(self,person_id):
         try:
-            return True,self.service.delete(id)
+            return True,self.service.delete(person_id)
         except Exception as e:
             return False, f"error: {e}"
 
@@ -38,8 +38,8 @@ class LessonController():
             return False, f"error: {e}"
 
 
-    def find_by_id(self, id):
+    def find_by_id(self, person_id):
         try:
-            return True,self.service.find_by_id(id)
+            return True,self.service.find_by_id(person_id)
         except Exception as e:
             return False, f"error: {e}"
