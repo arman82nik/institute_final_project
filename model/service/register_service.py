@@ -11,8 +11,8 @@ class RegisterService:
     def save(self,register):
         self.repository.save(register)
 
-    def delete(self,register):
-        self.repository.delete(register)
+    def delete(self,student_id):
+        self.repository.delete(student_id)
 
     def find_by_id(self,student_id):
         return self.repository.find_by_id(student_id)
