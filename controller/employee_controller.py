@@ -22,7 +22,7 @@ class EmployeeController:
 
     def delete(self,employee_id):
         try:
-            return True, self.service.delete(id)
+            return True, self.service.delete(employee_id)
         except Exception as e:
             return False, f"error: {e}"
     def find_all(self):

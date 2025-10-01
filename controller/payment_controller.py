@@ -17,7 +17,7 @@ class PaymentController:
         self.service.edit(payment)
     def delete(self,person_id):
         try:
-            return True, self.service.delete(id)
+            return True, self.service.delete(person_id)
         except Exception as e:
             return False, f"error: {e}"
 
@@ -26,9 +26,9 @@ class PaymentController:
             return True, self.service.find_all()
         except Exception as e:
             return False, f"error: {e}"
-    def find_by_id(self,id):
+    def find_by_id(self,person_id):
         try:
-            return True, self.service.find_by_id(id)
+            return True, self.service.find_by_id(person_id)
         except Exception as e:
             return False, f"error: {e}"
 

@@ -9,7 +9,7 @@ from view.component.label_with_text import LabelWithText
 
 
 
-class CourseView:
+class PaymentView:
     def reset_form(self):
         self.person_id.set(0)
         self.amount.set(0)
@@ -23,7 +23,7 @@ class CourseView:
             self.show_data_on_table(payment_list)
 
     def show_data_on_table(self, payment_list):
-        for item in self.table.payment_list():
+        for item in self.table.get_children():
             self.table.delete(item)
 
 
@@ -85,13 +85,13 @@ class CourseView:
             self.reset_form()
 
         else:
-            msg.showerror("Error", f"{message}peyment delete Error")
+            msg.showerror("Error", f"{message}payment delete Error")
 
 
     def __init__(self):
         self.payment_controller = PaymentController()
         self.win=Tk()
-        self.win.title("Course profile")
+        self.win.title("payment profile")
         self.win.geometry("900x450")
 
         self.person_id = IntVar()
@@ -112,6 +112,9 @@ class CourseView:
 
         self.description = StringVar()
         LabelWithText(self.win, "description:", self.description ,20,240)
+
+        self.payment_type = StringVar()
+        LabelWithText(self.win, "payment_type:", self.payment_type, 20, 240)
 
 
 

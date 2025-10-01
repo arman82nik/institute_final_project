@@ -102,7 +102,7 @@ class EmployeeView:
         self.win.geometry("900x450")
 
         self.first_name = IntVar()
-        LabelWithText(self.win, "first_name:", self.first_name ,20,20,state="readonly")
+        LabelWithText(self.win, "first_name:", self.first_name ,20,20)
 
 
         self.last_name = StringVar()
