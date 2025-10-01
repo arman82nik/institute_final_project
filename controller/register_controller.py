@@ -22,9 +22,9 @@ class RegisterController:
         register.id=id
         return self.service.edit(register)
 
-    def delete(self, id):
+    def delete(self, person_id):
         try:
-            return True,self.service.delete(id)
+            return True,self.service.delete(person_id)
         except Exception as e:
             return False, f"error: {e}"
 
