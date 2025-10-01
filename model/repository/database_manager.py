@@ -124,7 +124,7 @@ def create_database():
 
     cursor.execute(
         """
-        CREATE TABLE IF NOT EXISTS attendance (
+        CREATE TABLE IF NOT EXISTS payments (
          id  INTEGER PRIMARY KEY AUTOINCREMENT,
         person_id REFERENCES PERSONS,
         title        TEXT    NOT NULL,
