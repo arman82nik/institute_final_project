@@ -3,6 +3,7 @@ import tkinter.messagebox as msg
 from tkinter import ttk
 
 
+
 from controller.student_controller import StudentController
 from model.entity.student import Student
 from view.component.label_with_text import LabelWithText
@@ -142,7 +143,7 @@ class StudentView:
         self.table.column(7, width=70)
 
 
-        self.table.bind("<<TreeviewSelect>>", self.select_student())
+        self.table.bind("<<TreeviewSelect>>", self.select_student)
         self.table.place(x=220,y=60)
 
         Button(self.win, text="New Student", command=self.reset_form).place(x=220,y=390)
