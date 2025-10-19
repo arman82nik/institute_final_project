@@ -1,8 +1,8 @@
 # print("app started")
 #
-# from model.repository.database_manager import create_database
-# create_database()
-# print("Database created")
+from model.repository.database_manager import create_database
+create_database()
+print("Database created")
 #from sqlalchemy import engine
 
 # pass
@@ -29,8 +29,8 @@
 #
 #
 #
-from view.project_view import ProjectView
-ui = ProjectView()
+#from view.project_view import ProjectView
+#ui = ProjectView()
 
 
 # exercise passed

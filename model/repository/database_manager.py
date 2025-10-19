@@ -181,6 +181,32 @@ def create_database():
     )
 
 
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS classroom (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    class_number INTEGER NOT NULL,
+    floor INTEGER NOT NULL,
+    start_time  TEXT NOT NULL,
+    end_time  TEXT NOT NULL,
+    course TEXT NOT NULL,
+    teacher TEXT NOT NULL
+    )
+""")
+
+
+    cursor.execute("""
+    create table if not exists session_ (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        class_number INTEGER NOT NULL,
+        floor INTEGER NOT NULL,
+        start_time  TEXT NOT NULL,
+        end_time  TEXT NOT NULL,
+        start_date TEXT NOT NULL,
+        end_date TEXT NOT NULL,
+        course TEXT NOT NULL,
+        teacher TEXT NOT NULL
+    )
+""")
 
     cursor.close()
     connection.close()
